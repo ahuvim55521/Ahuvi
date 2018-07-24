@@ -11,7 +11,7 @@
                                              document.getElementById("hh").innerText=content[num].name;
                                              fetch(`https://restcountries.eu/rest/v2/name/${content[num].name}`)
                                              .then(res => res.json())
-                                             .then(content => document.getElementById("data").innerText=content);
+                                             .then(content => document.getElementById("data").innerText=JSON.stringify(content));
                                              })
                                                        
                                      ; 
@@ -25,7 +25,7 @@
     
     <body>
      
-        <button onclick="Country()">country</button> 
+        <button onclick="Country()">random country</button> 
         <h3 id="hh"></h3>
         <p id="data"></p>
     </body>
