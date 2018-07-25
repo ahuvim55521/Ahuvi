@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <form>
+            <h3>תאריך</h3> 
+            <input id="dt" type="date">
+            <h3>שעה</h3>
+            <input id="t" type="time">
+            <h3>משימה</h3> 
+            <textarea id="tk"></textarea>
+            <div id="add">
+                    <button v-on:click="st">save</button>
+                </div>       
+    </form>
+
+    
+    <script>
+
+        new Vue({
+            el: '#add',
+            data: {
+            
+
+            },
+            methods:
+            {
+                st: function () {
+                    let task = {
+                        dateO: document.getElementById("dt").value,
+                        timeO: document.getElementById("t").value, 
+                        taskO: document.getElementById("tk").value
+                    };
+
+                    //sessionStorage.setItem("task", JSON.stringify(task));
+
+                    let prevtask = localStorage.getItem("all task");
+                    prevtask = (prevtask) ? JSON.parse(prevtask) : [];
+                    prevtask.push(task);
+                    localStorage.setItem("all task", JSON.stringify(prevtask));
+                }
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>

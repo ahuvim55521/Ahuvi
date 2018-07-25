@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script>
+            function Country() {
+                                    let num= Math.random()*249;
+                                    num= Math.floor(num);                                 
+                                       fetch("https://restcountries.eu/rest/v2/all?fields=name")
+                                         .then(res => res.json())
+                                         .then(content => {
+                                             document.getElementById("name").innerText=content[num].name;
+                                             fetch(`https://restcountries.eu/rest/v2/name/${content[num].name}`)
+                                             .then(res => res.json())
+                                             .then(content => {
+                                                 document.getElementById("data").innerText=JSON.stringify(content)});
+                                             })
+                                                       
+                                     ; 
+
+                                   }
+            
+    
+    
+        </script>
+    </head>
+    
+    <body>
+     
+        <button onclick="Country()">random country</button> 
+        <h3 id="name"></h3>
+        <p id="data"></p>
+    </body>
+</html>

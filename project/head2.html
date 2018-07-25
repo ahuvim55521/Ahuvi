@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My first project in Vue </title>
+
+    <script src="https://unpkg.com/vue"></script>
+
+
+</head>
+<body>
+
+    <div id="d">
+    
+       <button><a v-bind:href="link_to_add">Add </a></button> 
+        <br>
+       <button> <a v-bind:href="link_to_list">tasks </a></button>
+    </div>
+
+    <script>
+
+
+        new Vue({
+            el: '#d',
+            data: {
+                link_to_add:"add.html",
+                link_to_list:"tasks.html"
+
+            }
+        })
+    </script> 
+
+</body>
+</html>

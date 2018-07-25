@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My first project in Vue </title>
+
+    <script src="https://unpkg.com/vue"></script>
+
+
+</head>
+<body>
+
+        <div id="one">
+                <h3>תאריך</h3> 
+                <input id="d" type="date">
+                <h3>שעה</h3>
+                <input id="t" type="time">
+                <h3>משימה</h3> 
+                <textarea id="tk"></textarea>
+                <button onclick= "add()" id="ok">ok</button> 
+        </div>
+
+    <script>
+
+
+        new Vue({
+            el: '#one',
+      date:{
+           l ={ dateO: d.innerText, timeO: t.innerText, teskO: tk.innerText},
+      },
+      methods: {
+           add: function () {
+            localStorage.setItem("tesk", JSON.stringify(this.l));
+             tk.innerText= "good";             
+           }     
+      }
+        })
+    </script> 
+
+</body>
+</html>

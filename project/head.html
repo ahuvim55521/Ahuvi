@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <script src="https://unpkg.com/vue"></script>
+
+</head>
+<body>
+   <head id="h">
+       <a v-bind:href= "add">Add</a>
+       <a v-bind:href= "tasks">tasks</a>
+   </head>
+
+   <script>
+         new vue({
+            el: '#h',
+            data:{
+                add: "add.html",
+                tasks: "tasks.html"
+            }
+         //   methods: {
+                
+        //    }
+        })
+        </script>
+
+</body>
+</html>
